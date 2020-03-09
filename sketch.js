@@ -73,7 +73,7 @@ function setup() {
 var x=150;
 var y=150;
 
-
+var rowColors = [ 'red' , 'green' , 'yellow' , 'blue' , 'magenta' , 'pink' , 'brown' , 'black']
 function draw() {
 	rectMode(CENTER);
 	ellipseMode(CENTER)
@@ -91,18 +91,19 @@ function draw() {
 	{
 		Body.setPosition(paddle,{x:paddle.position.x+5 , y:paddle.position.y})
 	}
-	fill( 128 , 0 , 0 )
+	fill( 255 )
 	rect(paddle.position.x , paddle.position.y  , 100 , 20);
 
-    fill( 0 , 0 , 255 )
+    fill( 255 )
 	circle(ball.position.x , ball.position.y , 10);
 
 	for(i=0;i<columns;i=i+1)
 	{
+		fill(rowColors[i]);
 		//brickBodies[i]=[];
 		for (j=0 ;j<rows;j=j+1)
 		{
-			fill( 0 , 255 , 0 )
+		 	
 			rect(brickBodies[i][j].position.x , brickBodies[i][j].position.y , 50 , 20)
 		}
 
